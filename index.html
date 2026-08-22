@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vieeetnam Trip — Oct 30 to Nov 5, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF7F2;--card:#FFFFFF;--text:#1A1A1A;--text-mid:#5A5650;--text-light:#8C8780;--accent:#C05A2C;--accent-light:#FFF0E8;--teal:#1A6B5A;--teal-light:#E4F2EE;--border:#E8E4DE;--gold:#B8860B;--gold-light:#FFF8E7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:680px;margin:0 auto;padding:24px 20px 60px}
+.header{text-align:center;padding:48px 20px 40px;position:relative}
+.header::after{content:'';display:block;width:60px;height:3px;background:var(--accent);margin:24px auto 0;border-radius:2px}
+.flag{font-size:40px;margin-bottom:8px}
+.header h1{font-family:'Instrument Serif',serif;font-size:36px;font-weight:400;letter-spacing:-0.5px;color:var(--text);margin-bottom:4px}
+.header .subtitle{font-size:15px;color:var(--text-mid);font-weight:400}
+.header .dates{display:inline-block;margin-top:16px;padding:6px 16px;background:var(--accent-light);color:var(--accent);border-radius:20px;font-size:13px;font-weight:500}
+.sched{margin:32px 0 40px}
+.sched h2{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text-light);margin-bottom:6px;font-weight:500}
+.sched-legend{display:flex;gap:16px;margin-bottom:14px;font-size:11px;color:var(--text-mid)}
+.sched-legend span{display:flex;align-items:center;gap:5px}
+.sched-swatch{width:14px;height:14px;border-radius:3px;display:inline-block}
+.sched-grid{display:grid;grid-template-columns:80px repeat(7,1fr);gap:0;font-size:11px}
+.sg-hdr{text-align:center;padding:6px 2px;font-weight:500;color:var(--text-mid);font-size:11px;line-height:1.3;border-bottom:2px solid var(--border)}
+.sg-name{padding:5px 4px 5px 0;font-weight:500;color:var(--text);font-size:12px;display:flex;align-items:center;border-bottom:1px solid var(--border)}
+.sg-cell{border-bottom:1px solid var(--border);border-left:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:32px;text-align:center;font-size:10px;font-weight:500}
+.sg-here{background:var(--teal-light)}
+.sg-transit{background:var(--accent-light);color:#7A3518}
+.sg-empty{background:transparent}
+.sg-count{border-bottom:none;font-size:13px;font-weight:700;color:var(--teal)}
+.sg-count-label{border-bottom:none;font-size:11px;color:var(--text-mid);font-weight:500}
+.phase{display:flex;align-items:center;gap:10px;margin:40px 0 16px}
+.phase-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.phase-dot.villa{background:var(--teal)}
+.phase-dot.city{background:var(--accent)}
+.phase-label{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text-light);font-weight:500}
+.phase-sub{font-size:13px;color:var(--text-mid);margin:-8px 0 16px 20px}
+.day{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.day-header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border)}
+.day-date{font-size:15px;font-weight:700;color:var(--text)}
+.day-theme{font-size:12px;color:var(--text-light);font-weight:400;margin-left:8px}
+.day-people{font-size:11px;color:var(--text-light);background:var(--bg);padding:3px 10px;border-radius:12px;white-space:nowrap}
+.day-body{padding:6px 18px 18px}
+.slot{padding:12px 0;border-bottom:1px solid var(--border)}
+.slot:last-child{border-bottom:none}
+.slot-time{font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-light);font-weight:500;margin-bottom:4px}
+.slot-title{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px}
+.slot-desc{font-size:12px;color:var(--text-mid);line-height:1.6}
+.slot-cost{display:inline-block;margin-top:6px;font-size:11px;color:var(--teal);font-weight:500}
+.depart{display:inline-flex;align-items:center;gap:4px;margin-top:6px;padding:3px 8px;background:var(--gold-light);color:var(--gold);border-radius:6px;font-size:11px;font-weight:500}
+.michelin{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-top:12px}
+.michelin-badge{display:inline-block;padding:3px 10px;background:#C41E3A;color:white;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:0.5px;margin-bottom:8px}
+.michelin h3{font-family:'Instrument Serif',serif;font-size:20px;font-weight:400;margin-bottom:4px}
+.michelin p{font-size:12px;color:var(--text-mid);line-height:1.6}
+.stay-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:12px}
+.stay-card h3{font-size:14px;font-weight:700;margin-bottom:2px}
+.stay-card .loc{font-size:12px;color:var(--text-light);margin-bottom:8px}
+.stay-card .features{display:flex;flex-wrap:wrap;gap:6px}
+.stay-card .feat{font-size:11px;padding:3px 8px;background:var(--bg);color:var(--text-mid);border-radius:6px}
+.budget{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin:32px 0}
+.budget h2{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text-light);font-weight:500;margin-bottom:12px}
+.budget-row{display:flex;justify-content:space-between;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)}
+.budget-row:last-child{border-bottom:none}
+.budget-row .label{color:var(--text-mid)}
+.budget-row .amount{font-weight:500;color:var(--text)}
+.checklist{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin:32px 0}
+.checklist h2{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text-light);font-weight:500;margin-bottom:10px}
+.check-item{display:flex;gap:8px;padding:6px 0;font-size:13px;color:var(--text-mid);border-bottom:1px solid var(--border)}
+.check-item:last-child{border-bottom:none}
+.check-item .cb{width:16px;height:16px;border:1.5px solid var(--border);border-radius:3px;flex-shrink:0;margin-top:2px}
+.footer{text-align:center;padding:32px 0 16px;font-size:11px;color:var(--text-light)}
+@media(max-width:480px){.header h1{font-size:28px}.container{padding:16px 14px 40px}.day-header{flex-direction:column;align-items:flex-start;gap:4px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="flag">🇻🇳</div>
+    <h1>Vieeetnam 2026</h1>
+    <div class="subtitle">Ho Chi Minh City · 11 friends · 6 days</div>
+    <div class="dates">Oct 30 (Fri) → Nov 5 (Thu)</div>
+  </div>
+
+  <!-- Crew schedule -->
+  <div class="sched">
+    <h2>The crew schedule</h2>
+    <div class="sched-legend">
+      <span><div class="sched-swatch" style="background:var(--accent-light);border:1.5px solid var(--accent)"></div> Arriving / departing</span>
+      <span><div class="sched-swatch" style="background:var(--teal-light);border:1.5px solid var(--teal)"></div> In Vietnam</span>
+    </div>
+    <div class="sched-grid">
+      <div class="sg-hdr"></div><div class="sg-hdr">Oct 30<br>Fri</div><div class="sg-hdr">Oct 31<br>Sat</div><div class="sg-hdr">Nov 1<br>Sun</div><div class="sg-hdr">Nov 2<br>Mon</div><div class="sg-hdr">Nov 3<br>Tue</div><div class="sg-hdr">Nov 4<br>Wed</div><div class="sg-hdr">Nov 5<br>Thu</div>
+      <div class="sg-name">Appu</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-transit">11:00a</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">4:20p</div>
+      <div class="sg-name">Ashok</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-transit">10:05a</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">4:10p</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div>
+      <div class="sg-name">KD</div><div class="sg-cell sg-transit">3:40p</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">9:10p</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div>
+      <div class="sg-name">Moda</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-transit">10:00a</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">4:00p</div><div class="sg-cell sg-empty"></div>
+      <div class="sg-name">Myanoj</div><div class="sg-cell sg-transit">arrives</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">departs</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div>
+      <div class="sg-name">OJ</div><div class="sg-cell sg-transit">4:00p</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">6:30a</div>
+      <div class="sg-name">Pattu</div><div class="sg-cell sg-transit">4:00p</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">6:30a</div>
+      <div class="sg-name">Pauly</div><div class="sg-cell sg-transit">11:00p</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">3:20p</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div>
+      <div class="sg-name">Praveen</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-transit">10:00a</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">4:45p</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div>
+      <div class="sg-name">Putt</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-transit">10:00a</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">4:00p</div><div class="sg-cell sg-empty"></div>
+      <div class="sg-name">Sakhs</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-transit">10:05a</div><div class="sg-cell sg-here"></div><div class="sg-cell sg-here"></div><div class="sg-cell sg-transit">4:10p</div><div class="sg-cell sg-empty"></div><div class="sg-cell sg-empty"></div>
+      <div class="sg-name sg-count-label">People</div><div class="sg-cell sg-count">5</div><div class="sg-cell sg-count">11</div><div class="sg-cell sg-count">10</div><div class="sg-cell sg-count" style="font-size:11px">10→8</div><div class="sg-cell sg-count" style="font-size:11px">8→5</div><div class="sg-cell sg-count" style="font-size:11px">5→3</div><div class="sg-cell sg-count" style="font-size:11px">3→0</div>
+    </div>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="phase">
+    <div class="phase-dot villa"></div>
+    <div class="phase-label">Phase 1 — Villa retreat · Oct 30–Nov 2</div>
+  </div>
+
+  <div class="stay-card">
+    <h3>The Summer Fortress Villa</h3>
+    <div class="loc">Nhà Bè district · 25 min from SGN airport · 25 min from District 1</div>
+    <div class="features">
+      <span class="feat">7 bedrooms</span>
+      <span class="feat">8 bathrooms</span>
+      <span class="feat">15m pool + jacuzzi</span>
+      <span class="feat">Cinema room</span>
+      <span class="feat">Gym</span>
+      <span class="feat">Tennis court</span>
+      <span class="feat">Badminton court</span>
+      <span class="feat">25,000 m² gardens</span>
+    </div>
+  </div>
+
+  <!-- Day 1 -->
+  <div class="day">
+    <div class="day-header">
+      <div><span class="day-date">Fri Oct 30</span><span class="day-theme"> · arrival day</span></div>
+      <div class="day-people">5 arrive</div>
+    </div>
+    <div class="day-body">
+      <div class="slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-title">Early birds land</div>
+        <div class="slot-desc">KD, OJ, Pattu, Myanoj arrive → Grab to villa (25 min). Settle in, explore the villa, stock up on drinks and snacks via Grab delivery or supermarket run.</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">Night</div>
+        <div class="slot-title">Welcome drinks by the pool</div>
+        <div class="slot-desc">Pauly arrives at 11 PM. Pool + drinks to kick things off. Set up the bar, get the music going.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day">
+    <div class="day-header">
+      <div><span class="day-date">Sat Oct 31</span><span class="day-theme"> · full squad day 🎃</span></div>
+      <div class="day-people">All 11</div>
+    </div>
+    <div class="day-body">
+      <div class="slot">
+        <div class="slot-time">Morning – Afternoon</div>
+        <div class="slot-title">Pool party + villa day</div>
+        <div class="slot-desc">Remaining 6 arrive by ~11 AM. Full squad together. Pool, games, villa vibes. Settle in and enjoy the space.</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">Evening</div>
+        <div class="slot-title">Villa BBQ night</div>
+        <div class="slot-desc">Order in a feast via Grab or ShopeeFood — fresh seafood, grilled meats, Vietnamese dishes, cold beer by the pool. Villa host can't arrange catering, so plan delivery in advance and stock up. Wind down in the cinema room after.</div>
+        <div class="slot-cost">~₹1,000–1,500/person for full BBQ spread</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day">
+    <div class="day-header">
+      <div><span class="day-date">Sun Nov 1</span><span class="day-theme"> · city adventure</span></div>
+      <div class="day-people">10</div>
+    </div>
+    <div class="day-body">
+      <div class="slot">
+        <div class="slot-time">Morning – Early afternoon</div>
+        <div class="slot-title">Villa time — last chance</div>
+        <div class="slot-desc">Sleep in. Lazy pool morning, brunch at the villa. Use the courts, gym, cinema. You check out tomorrow — make the most of it.</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">1 PM</div>
+        <div class="slot-title">Lunch at Nam Giao</div>
+        <div class="slot-desc">Huế sharing plates in a hidden alley behind Ben Thanh Market. Leave villa by 12:30 PM, Grab to District 1 (25 min). Starters: Bánh bèo · Bánh bột lọc · Bánh nậm · Nem lụi. Mains: Bún bò Huế · Cơm hến · Bánh canh cua.</div>
+        <div class="slot-cost">~₹300–500/person</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">2:15 PM</div>
+        <div class="slot-title">Ho Chi Minh City Museum</div>
+        <div class="slot-desc">Walk through Saigon's history. Good context before the War Remnants Museum on Nov 2. 45 min–1 hr, 3 min walk from Nam Giao.</div>
+        <div class="slot-cost">~₹100/person (30,000 VND)</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">3:30 PM</div>
+        <div class="slot-title">Coffee at Cộng Cà Phê</div>
+        <div class="slot-desc">Communist-themed café, iconic coconut coffee. 6A Ngô Thời Nhiệm. Spacious enough for the group. Chill until it's time to head to the pickup.</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">5:45 PM</div>
+        <div class="slot-title">Walk to tour pickup</div>
+        <div class="slot-desc">Nguyen Du Secondary School, 139 Nguyen Du Street. Short walk from Cộng Cà Phê.</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">6–10 PM</div>
+        <div class="slot-title">Scooter street food tour</div>
+        <div class="slot-desc">Saigon Adventure — 7 tastings and sightseeing with local guides. 10 people, female drivers.</div>
+        <div class="slot-cost">~₹2,600/person ($31 USD) · cash to tour guide</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">After 10 PM</div>
+        <div class="slot-title">Stock up + Grab back to villa</div>
+        <div class="slot-desc">Hit a Circle K or GS25 near the tour drop-off — cold beer, snacks for the ride. Grab back to Summer Fortress (~25 min). Crack open Saigon Beers in the cab, pool nightcap at the villa.</div>
+      </div>
+      <div class="depart">✈ Myanoj departs today</div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase">
+    <div class="phase-dot city"></div>
+    <div class="phase-label">Phase 2 — District 1 city mode · Nov 2–5</div>
+  </div>
+  <div class="phase-sub">Apartment in District 1, walking distance to Bui Vien, Ben Thanh Market, and rooftop bars. Airport is a 20-min Grab away — no stress for anyone catching flights.</div>
+
+  <div class="stay-card">
+    <h3>Masterpiece Apartment — Madison Tower</h3>
+    <div class="loc">15 Thi Sách, Quận 1 · next to Lam Son Square · Saigon River &amp; Opera House views</div>
+    <div class="features">
+      <span class="feat">4 bedrooms</span>
+      <span class="feat">5 beds</span>
+      <span class="feat">4 bathrooms</span>
+      <span class="feat">Skypool</span>
+      <span class="feat">Gym</span>
+      <span class="feat">Netflix</span>
+      <span class="feat">Kitchen</span>
+      <span class="feat">Washer/dryer</span>
+      <span class="feat">★ 4.68 · 66 reviews</span>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day">
+    <div class="day-header">
+      <div><span class="day-date">Mon Nov 2</span><span class="day-theme"> · transition day</span></div>
+      <div class="day-people">10 → 8</div>
+    </div>
+    <div class="day-body">
+      <div class="slot">
+        <div class="slot-time">Morning</div>
+        <div class="slot-title">Check out villa → District 1 apartment</div>
+        <div class="slot-desc">Checkout by noon. Pauly heads to airport (3:20 PM flight). Everyone else drops bags at Madison Tower. Check-in after 2 PM, self check-in via keypad.</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-title">Ben Thanh Market + Book Street + War Remnants Museum</div>
+        <div class="slot-desc">All within walking distance. Ben Thanh for street food lunch and souvenirs. Book Street (Nguyen Van Binh) for charming cafés. War Remnants Museum — powerful, 1-1.5 hours.</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">Evening</div>
+        <div class="slot-title">Saigon River night cruise</div>
+        <div class="slot-desc">Buffet dinner on the river as the city lights up. Live music on board, skyline views from the deck. A relaxed first evening in the city after a busy afternoon of exploring.</div>
+        <div class="slot-cost">~₹3,000/person</div>
+      </div>
+      <div class="depart">✈ Pauly (3:20p), KD (9:10p) depart</div>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="day">
+    <div class="day-header">
+      <div><span class="day-date">Tue Nov 3</span><span class="day-theme"> · tunnels + cocktails</span></div>
+      <div class="day-people">8 → 5</div>
+    </div>
+    <div class="day-body">
+      <div class="slot">
+        <div class="slot-time">Morning (8 AM – 2 PM)</div>
+        <div class="slot-title">Cu Chi Tunnels + AK-47 shooting</div>
+        <div class="slot-desc">Half-day guided tour with 8 people. Documentary, tunnel crawling, wartime trap demos, food tasting. Then the shooting range — AK-47, M16, carbine available. Guns on fixed stands, supervised, hearing protection provided. Back in the city by 2 PM — plenty of time for afternoon departures.</div>
+        <div class="slot-cost">Tour: ~₹1,200/person · Shooting: ₹2,500 for 10 rounds AK-47</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-title">Free afternoon</div>
+        <div class="slot-desc">Ashok, Sakhs, Praveen head to airport. Remaining 5: chill in District 1, coffee, explore.</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">Evening</div>
+        <div class="slot-title">Speakeasy cocktail crawl</div>
+        <div class="slot-desc">Saigon's hidden bar scene with the smaller crew. Snuffbox (classic 1920s speakeasy), CLIMB (hidden behind a vending machine), Layla (rooftop cocktails). All walkable in District 1.</div>
+        <div class="slot-cost">Cocktails ~₹400-600 each</div>
+      </div>
+      <div class="depart">✈ Ashok, Sakhs (4:10p), Praveen (4:45p) depart</div>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day">
+    <div class="day-header">
+      <div><span class="day-date">Wed Nov 4</span><span class="day-theme"> · final day</span></div>
+      <div class="day-people">5 → 3</div>
+    </div>
+    <div class="day-body">
+      <div class="slot">
+        <div class="slot-time">Morning</div>
+        <div class="slot-title">Vietnamese spa + massage</div>
+        <div class="slot-desc">Wind down before the last stretch. Vietnamese massage, hot stone, or herbal treatments. 60-90 min, walk-ins available all over District 1.</div>
+        <div class="slot-cost">₹500–800/person for 60 min</div>
+      </div>
+      <div class="slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-title">Free afternoon</div>
+        <div class="slot-desc">Moda and Putt head to airport by 2 PM. Remaining 3: Dong Khoi street walk, Vietnamese iced coffee, last-minute shopping.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Michelin dinner -->
+  <div class="michelin">
+    <div class="michelin-badge">MICHELIN ★</div>
+    <h3>Final dinner — CoCo Dining</h3>
+    <p>
+      <strong>Wed Nov 4, 7 PM</strong> · 143 Nam Ky Khoi Nghia, District 1 (walkable from apartment)<br>
+      Chef Thanh Vuong Vo's tasting menu takes you on a train journey through Vietnam's food regions — each course represents a different stop. The perfect bookend — your trip starts with street food on scooters and ends with those same flavours reimagined at a Michelin-starred table. Whisky bar on-site for after-dinner drinks.
+    </p>
+    <p style="margin-top:8px;">
+      <strong>Tasting menu ~₹4,000–6,000/person</strong> · Book for 7 PM (tasting menu cutoff is 8:30 PM)<br>
+      <em>Book well in advance — confirm tasting menu availability when reserving.</em>
+    </p>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day" style="margin-top:12px;">
+    <div class="day-header">
+      <div><span class="day-date">Thu Nov 5</span><span class="day-theme"> · departure</span></div>
+      <div class="day-people">3 → 0</div>
+    </div>
+    <div class="day-body">
+      <div class="slot">
+        <div class="slot-time">Early morning – Afternoon</div>
+        <div class="slot-title">Final departures</div>
+        <div class="slot-desc">OJ, Pattu → Grab at 4:30 AM (6:30 AM flight). Appu departs at 4:20 PM — full morning to explore or sleep in. SGN airport is 20 min from District 1.</div>
+      </div>
+      <div class="depart">✈ OJ, Pattu (6:30a), Appu (4:20p) depart</div>
+    </div>
+  </div>
+
+  <!-- Backup activities -->
+  <div class="budget">
+    <h2>Backup activities — swap in if plans change</h2>
+    <div class="budget-row"><span class="label">🎃 Halloween night on Bui Vien</span><span class="amount">Oct 31 alt</span></div>
+    <div class="budget-row"><span class="label" style="font-size:11px;color:var(--text-light);padding-left:4px">Costume parties, cheap beer, live music. Grab to District 1, 25 min.</span><span class="amount"></span></div>
+    <div class="budget-row"><span class="label">🍸 Distill your own gin</span><span class="amount">Any afternoon</span></div>
+    <div class="budget-row"><span class="label" style="font-size:11px;color:var(--text-light);padding-left:4px">District 9 Distilling (Saigon Baigur). Pick botanicals, make your own bottle. ~2 hours.</span><span class="amount"></span></div>
+    <div class="budget-row"><span class="label">🚙 Jeep night tour + street food</span><span class="amount">Any evening</span></div>
+    <div class="budget-row"><span class="label" style="font-size:11px;color:var(--text-light);padding-left:4px">Ride through Saigon in restored military jeeps. Rooftop bar, flower market, food stops. 3 hours.</span><span class="amount"></span></div>
+    <div class="budget-row"><span class="label">🚢 Saigon River night cruise</span><span class="amount">Any HCMC evening</span></div>
+    <div class="budget-row"><span class="label" style="font-size:11px;color:var(--text-light);padding-left:4px">Buffet dinner on the river as the city lights up. Live music on board, skyline views. ~₹3,000/person.</span><span class="amount"></span></div>
+    <div class="budget-row"><span class="label">🦑 Night squid fishing</span><span class="amount">Vung Tau day trip</span></div>
+    <div class="budget-row"><span class="label" style="font-size:11px;color:var(--text-light);padding-left:4px">Head out with local fishermen after dark. Catch squid, have it grilled on the boat. ~2–3 hours.</span><span class="amount"></span></div>
+  </div>
+
+  <!-- Book in advance -->
+  <div class="checklist">
+    <h2>Book in advance</h2>
+    <div class="check-item"><div class="cb"></div>BBQ night food order (Oct 31) — plan Grab/ShopeeFood delivery, stock up on drinks</div>
+    <div class="check-item"><div class="cb"></div>Cu Chi Tunnels tour (Nov 3) — book for 8 people</div>
+    <div class="check-item"><div class="cb"></div>CoCo Dining dinner (Nov 4, 7 PM) — book early, confirm tasting menu</div>
+  </div>
+
+  <div class="footer">
+    Made with ☕ and too many browser tabs · August 2026
+  </div>
+
+</div>
+</body>
+</html>
