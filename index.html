@@ -78,6 +78,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
 .slot:last-child{border-bottom:none}
 .slot-time{font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-light);font-weight:500;margin-bottom:4px}
 .slot-title{font-size:14px;font-weight:500;margin-bottom:3px}
+.slot-title a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent)}
+.slot-title a:hover{opacity:0.8}
+.slot-desc a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}
+.slot-desc a:hover{opacity:0.8}
 .slot-desc{font-size:12px;color:var(--text-mid);line-height:1.6}
 .slot-cost{display:inline-block;margin-top:6px;font-size:11px;color:var(--teal);font-weight:500}
 .slot-book{display:inline-block;margin-top:6px;margin-left:4px;font-size:10px;padding:2px 6px;border-radius:4px;background:var(--accent-light);color:var(--accent);font-weight:500;text-transform:uppercase;letter-spacing:0.3px}
@@ -217,10 +221,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
         Tour: ~₹1,200/person · Shooting: ₹2,500 for 10 rounds AK-47
       </div>
     </div>
-    <div class="booking-item">
-      <h4>Saigon River Night Cruise <span class="booking-status pending">Not booked</span></h4>
-      <div class="booking-meta">Buffet dinner cruise · Nov 2 evening · ~₹3,000/person</div>
-    </div>
     <div class="booking-category"><span class="dot" style="background:var(--red)"></span> Dining</div>
     <div class="booking-item">
       <h4>CoCo Dining — Michelin ★ Final Dinner <span class="booking-status pending">Not booked</span></h4>
@@ -248,10 +248,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
 
     <div class="day" data-date="2026-11-01"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><span class="day-date">Sun Nov 1</span><span class="day-theme">· city adventure</span></div><div class="day-right"><span class="day-people">10</span><span class="day-chevron">›</span></div></div><div class="day-body">
       <div class="slot"><div class="slot-time">Morning – Early afternoon</div><div class="slot-title">Villa time — last chance</div><div class="slot-desc">Sleep in. Lazy pool morning, brunch at the villa. Use the courts, gym, cinema. You check out tomorrow — make the most of it.</div></div>
-      <div class="slot"><div class="slot-time">1 PM</div><div class="slot-title">Lunch at Nam Giao</div><div class="slot-desc">Huế sharing plates in a hidden alley behind Ben Thanh Market. Leave villa by 12:30 PM, Grab to District 1 (25 min). Starters: Bánh bèo · Bánh bột lọc · Bánh nậm · Nem lụi. Mains: Bún bò Huế · Cơm hến · Bánh canh cua.</div><div class="slot-cost">~₹300–500/person</div></div>
-      <div class="slot"><div class="slot-time">2:15 PM</div><div class="slot-title">Ho Chi Minh City Museum</div><div class="slot-desc">Walk through Saigon's history. Good context before the War Remnants Museum on Nov 2. 45 min–1 hr, 3 min walk from Nam Giao.</div><div class="slot-cost">~₹100/person (30,000 VND)</div></div>
-      <div class="slot"><div class="slot-time">3:30 PM</div><div class="slot-title">Coffee at Cộng Cà Phê</div><div class="slot-desc">Communist-themed café, iconic coconut coffee. 6A Ngô Thời Nhiệm. Spacious enough for the group. Chill until it's time to head to the pickup.</div></div>
-      <div class="slot"><div class="slot-time">5:45 PM</div><div class="slot-title">Walk to tour pickup</div><div class="slot-desc">Nguyen Du Secondary School, 139 Nguyen Du Street. Short walk from Cộng Cà Phê.</div></div>
+      <div class="slot"><div class="slot-time">1 PM</div><div class="slot-title">Lunch at <a href="https://www.google.com/maps/search/?api=1&query=10.7770824,106.69975439999999&query_place_id=ChIJQxLkCTgvdTERwY7eaX3aK3g" target="_blank">Secret Garden</a></div><div class="slot-desc">Rooftop Vietnamese home-cooking, 5th floor. Family-style sharing plates. Full vegetarian side of the menu. Leave villa by 12:30 PM, Grab to District 1 (25 min).<br><br>Starters: Gỏi cuốn (Fresh Spring Rolls) · Bánh xèo (Crispy Vietnamese Crepe) · Canh chua (Sweet &amp; Sour Soup).<br>Mains: Sườn ram sả (Lemongrass Braised Ribs) · Cá kho tộ (Claypot Fish) · Gà nướng sả (Grilled Lemongrass Chicken) · Đậu hũ chiên sả (Tofu Fried with Lemongrass) · Đậu bắp xào (Stir-fried Okra) · Rau muống xào tỏi (Stir-fried Morning Glory).</div><div class="slot-cost">~₹700–1,050/person</div></div>
+      <div class="slot"><div class="slot-time">2:15 PM</div><div class="slot-title"><a href="https://www.google.com/maps/search/?api=1&query=10.775918,106.6996319&query_place_id=ChIJlel-En4vdTERc64rKNBbyy0" target="_blank">Ho Chi Minh City Museum</a></div><div class="slot-desc">Walk through Saigon's history. Good context before the War Remnants Museum on Nov 2. 45 min–1 hr, 5 min walk from Secret Garden.</div><div class="slot-cost">~₹100/person (30,000 VND)</div></div>
+      <div class="slot"><div class="slot-time">3:30 PM</div><div class="slot-title">Coffee at <a href="https://www.google.com/maps/search/?api=1&query=10.7807081,106.6899256&query_place_id=ChIJ_xsVP_MvdTERLrCIaG7K4Jg" target="_blank">Cộng Cà Phê</a></div><div class="slot-desc">Communist-themed café, iconic coconut coffee. Spacious enough for the group. Chill until it's time to head to the pickup.</div></div>
+      <div class="slot"><div class="slot-time">5:45 PM</div><div class="slot-title">Walk to <a href="https://www.google.com/maps/search/?api=1&query=10.7730727,106.6938696&query_place_id=ChIJPdO7BjwvdTERX6I7Auq3vTw" target="_blank">tour pickup</a></div><div class="slot-desc">Nguyen Du Secondary School, 139 Nguyen Du Street. Short walk from Cộng Cà Phê.</div></div>
       <div class="slot"><div class="slot-time">6–10 PM</div><div class="slot-title">Scooter street food tour</div><div class="slot-desc">Saigon Adventure — 7 tastings and sightseeing with local guides. 11 people, female drivers.</div><div class="slot-cost">~₹2,600/person ($31 USD) · cash to tour guide</div><span class="slot-book">Booked: Saigon Adventure</span></div>
       <div class="slot"><div class="slot-time">After 10 PM</div><div class="slot-title">Stock up + Grab back to villa</div><div class="slot-desc">Hit a Circle K or GS25 near the tour drop-off — cold beer, snacks for the ride. Grab back to Summer Fortress (~25 min). Crack open Saigon Beers in the cab, pool nightcap at the villa.</div></div>
       <div class="depart">✈ Myanoj departs today</div>
@@ -260,9 +260,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
     <div class="phase"><div class="phase-dot city"></div><div class="phase-label">Phase 2 — District 1 city mode · Nov 2–5</div></div>
 
     <div class="day" data-date="2026-11-02"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><span class="day-date">Mon Nov 2</span><span class="day-theme">· transition day</span></div><div class="day-right"><span class="day-people">10 → 8</span><span class="day-chevron">›</span></div></div><div class="day-body">
-      <div class="slot"><div class="slot-time">Morning</div><div class="slot-title">Check out villa → District 1 apartment</div><div class="slot-desc">Checkout by noon. Pauly heads to airport (3:20 PM flight). Everyone else drops bags at Madison Tower. Check-in after 2 PM, self check-in via keypad.</div></div>
-      <div class="slot"><div class="slot-time">Afternoon</div><div class="slot-title">Ben Thanh Market + Book Street + War Remnants Museum</div><div class="slot-desc">All within walking distance. Ben Thanh for street food lunch and souvenirs. Book Street (Nguyen Van Binh) for charming cafés. War Remnants Museum — powerful, 1-1.5 hours.</div></div>
-      <div class="slot"><div class="slot-time">Evening</div><div class="slot-title">Saigon River night cruise</div><div class="slot-desc">Buffet dinner on the river as the city lights up. Live music on board, skyline views from the deck. A relaxed first evening in the city after a busy afternoon of exploring.</div><div class="slot-cost">~₹3,000/person</div></div>
+      <div class="slot"><div class="slot-time">12 PM</div><div class="slot-title">Check out villa → District 1</div><div class="slot-desc">Pauly → Grab straight to SGN airport from the villa (25 min ride, 3:20 PM flight). Everyone else → Grab to Madison Tower (25 min). Drop bags at reception, check-in after 2 PM.</div></div>
+      <div class="slot"><div class="slot-time">1 PM</div><div class="slot-title">Lunch + <a href="https://www.google.com/maps/search/?api=1&query=10.780963,106.7000734&query_place_id=ChIJS8Yv1zcvdTERUI2V47UxkPw" target="_blank">Book Street</a></div><div class="slot-desc">Lunch at one of the restaurants on Hàn Thuyên — veg and non-veg covered. Then browse the 144m pedestrian street — book stalls, postcards, souvenirs, coffee at <a href="https://www.google.com/maps/search/?api=1&query=10.7805,106.6999&query_place_id=ChIJhcbNibAvdTERzbLz7SrPCZo" target="_blank">Phuong Nam Book Café</a> under the tree canopy. 5 min walk from apartment.</div><div class="slot-cost">~₹400–600/person</div></div>
+      <div class="slot"><div class="slot-time">2:15 PM</div><div class="slot-title"><a href="https://www.google.com/maps/search/?api=1&query=10.776994,106.695302&query_place_id=ChIJL0dwVTgvdTERao3t8B1Jhxc" target="_blank">Independence Palace</a></div><div class="slot-desc">Presidential bunker, war command room, rooftop helipad. Tank photo spot at the front lawn. 5 min walk from Book Street. Ticket office closes 3:30 PM.</div><div class="slot-cost">~₹145–290/person (40,000–80,000 VND)</div></div>
+      <div class="slot"><div class="slot-time">3:45 PM</div><div class="slot-title"><a href="https://www.google.com/maps/search/?api=1&query=10.7795,106.6921&query_place_id=ChIJzwg3ojAvdTERqnQUK99K2Xw" target="_blank">War Remnants Museum</a></div><div class="slot-desc">Tanks, helicopters, aircraft outside. Indoor exhibits across multiple floors. 10 min walk from Palace. Open until 5:30 PM.</div><div class="slot-cost">~₹145/person (40,000 VND)</div></div>
+      <div class="slot"><div class="slot-time">5:15 PM</div><div class="slot-title"><a href="https://www.google.com/maps/search/?api=1&query=10.7725,106.6980&query_place_id=ChIJTeYpMT8vdTERMH8sUnkta40" target="_blank">Ben Thanh Market</a></div><div class="slot-desc">Street food snacks, souvenirs, shopping. 15 min walk south.</div></div>
+      <div class="slot"><div class="slot-time">6:15 PM</div><div class="slot-title">Back to apartment</div><div class="slot-desc">Walk to Madison Tower (10 min). Check in, dump shopping bags, freshen up. KD → Grab to SGN airport (20 min, 9:10 PM flight).</div></div>
+      <div class="slot"><div class="slot-time">7:30 PM</div><div class="slot-title">Dinner & drinks at <a href="https://www.google.com/maps/search/?api=1&query=10.7754,106.7041&query_place_id=ChIJ69mAX0YvdTERKz-HPFntDZc" target="_blank">Layla</a></div><div class="slot-desc">Rooftop + indoor AC, pool table. 5 min walk from apartment.</div></div>
       <div class="depart">✈ Pauly (3:20p), KD (9:10p) depart</div>
     </div></div>
 
@@ -295,6 +299,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
       <div class="budget-row"><span class="label" style="font-size:11px;color:var(--text-light);padding-left:4px">District 9 Distilling (Saigon Baigur). Pick botanicals, make your own bottle. ~2 hours.</span><span class="amount"></span></div>
       <div class="budget-row"><span class="label">🚙 Jeep night tour + street food</span><span class="amount">Any evening</span></div>
       <div class="budget-row"><span class="label" style="font-size:11px;color:var(--text-light);padding-left:4px">Ride through Saigon in restored military jeeps. Rooftop bar, flower market, food stops. 3 hours.</span><span class="amount"></span></div>
+      <div class="budget-row"><span class="label">🚢 Saigon River night cruise</span><span class="amount">Any HCMC evening</span></div>
+      <div class="budget-row"><span class="label" style="font-size:11px;color:var(--text-light);padding-left:4px">Buffet dinner on the river. Live music, skyline views, Landmark 81. Pickup from District 1 ~7 PM, 2–3 hours. ~₹2,000–3,000/person.</span><span class="amount"></span></div>
     </div>
   </div>
 
