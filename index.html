@@ -29,9 +29,8 @@
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
 .container{max-width:680px;margin:0 auto;padding:24px 20px 20px}
 .header{text-align:center;padding:32px 20px 28px;position:relative}
-.header::after{content:'';display:block;width:60px;height:3px;background:var(--accent);margin:20px auto 0;border-radius:2px}
-.flag{font-size:36px;margin-bottom:6px}
-.header h1{font-family:'Instrument Serif',serif;font-size:32px;font-weight:400;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-title{margin:0 0 14px;font-size:0;line-height:0}
+.hero-title img{display:block;width:180px;max-width:100%;height:auto;margin:0 auto}
 .header .subtitle{font-size:14px;color:var(--text-mid);font-weight:400}
 .header .dates{display:inline-block;margin-top:12px;padding:5px 14px;background:var(--accent-light);color:var(--accent);border-radius:20px;font-size:12px;font-weight:500}
 .tab-bar{display:flex;gap:0;justify-content:center;margin:20px 0 0;position:sticky;top:0;z-index:10;background:var(--bg);padding:8px 0 0;border-bottom:2px solid var(--border)}
@@ -154,7 +153,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
 .tips-list li::before{content:'·';position:absolute;left:0;font-weight:700;color:var(--text-light);font-size:16px;line-height:1.2}
 .footer{text-align:center;padding:24px 0 16px;font-size:11px;color:var(--text-light)}
 @media(max-width:480px){
-  .header h1{font-size:28px}
   .container{padding:16px 14px 20px}
   .day-header{padding:12px 14px}
   .day-body{padding:6px 14px 14px}
@@ -170,8 +168,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
 <div class="container">
 
   <div class="header">
-    <div class="flag">🇻🇳</div>
-    <h1>Vieeetnam 2026</h1>
+    <h1 class="hero-title">
+      <img src="hero-saigon-2026.png" alt="Saigon 2026" width="348" height="270">
+    </h1>
     <div class="subtitle">Ho Chi Minh City · 11 friends · 6 days</div>
     <div class="dates">Oct 30 (Fri) → Nov 5 (Thu)</div>
   </div>
